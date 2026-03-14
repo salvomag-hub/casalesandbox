@@ -737,6 +737,135 @@
             letter-spacing: 0.05rem;
         }
 
+        /* ========== SERVIZI STRIP ========== */
+        .services-strip {
+            background: var(--primary);
+            padding: 3rem 5%;
+        }
+
+        .services-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--white);
+        }
+
+        .service-badge-icon {
+            font-size: 1.5rem;
+        }
+
+        .service-badge-text {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 400;
+        }
+
+        /* ========== CHI SIAMO ========== */
+        .chi-siamo {
+            background: var(--light);
+        }
+
+        .chi-siamo-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .chi-siamo-img {
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .chi-siamo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .chi-siamo-text p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+
+        .chi-siamo-text .motto {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            font-style: italic;
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        /* ========== RECENSIONI ========== */
+        .recensioni {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .recensioni .section-title { color: var(--white); }
+        .recensioni .section-subtitle { color: rgba(255,255,255,0.5); }
+
+        .recensioni-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 2.5rem 2rem;
+        }
+
+        .review-stars {
+            color: var(--accent);
+            font-size: 1rem;
+            letter-spacing: 0.15rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .review-text {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-author {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            color: var(--accent);
+        }
+
+        .review-source {
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.35);
+            margin-top: 0.3rem;
+        }
+
         /* ========== CONTATTI / INFO ========== */
         .info {
             background: var(--primary);
@@ -1007,6 +1136,19 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hamburger { display: flex; }
+
+            .chi-siamo-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .recensioni-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-row {
+                gap: 1.5rem;
+            }
 
             section { padding: 4rem 5%; }
 
@@ -1290,12 +1432,13 @@
         </div>
         <div class="ristorante-content">
             <div class="section-label fade-up">Gastronomia</div>
-            <h2 class="section-title fade-up">Il Ristorante</h2>
+            <h2 class="section-title fade-up">&laquo;Si mangia quello che c'&egrave;!&raquo;</h2>
             <p class="ristorante-text fade-up">
-                La cucina del Casale celebra i sapori autentici delle Marche.
-                Ingredienti dal nostro orto, carni di allevamenti locali,
-                formaggi di pecora e vini DOC selezionati. Ogni piatto racconta
-                la tradizione di questa terra generosa.
+                Il nostro motto racconta tutto: al Casale la cucina &egrave; autentica,
+                semplice e preparata con amore. Ingredienti coltivati nel nostro orto,
+                carni dall'allevamento aziendale, formaggi di pecora e vini DOC
+                selezionati. Nessun menu fisso: ogni giorno la tavola si riempie
+                di quello che la terra e la stagione offrono.
             </p>
             <div class="ristorante-highlights fade-up">
                 <div class="highlight-item">
@@ -1375,6 +1518,89 @@
         </div>
     </section>
 
+    <!-- Servizi Strip -->
+    <div class="services-strip">
+        <div class="services-row">
+            <div class="service-badge fade-up">
+                <span class="service-badge-icon">&#127860;</span>
+                <span class="service-badge-text">Colazione inclusa</span>
+            </div>
+            <div class="service-badge fade-up">
+                <span class="service-badge-icon">&#128246;</span>
+                <span class="service-badge-text">Wi-Fi gratuito</span>
+            </div>
+            <div class="service-badge fade-up">
+                <span class="service-badge-icon">&#128663;</span>
+                <span class="service-badge-text">Parcheggio libero</span>
+            </div>
+            <div class="service-badge fade-up">
+                <span class="service-badge-icon">&#10052;</span>
+                <span class="service-badge-text">Aria condizionata</span>
+            </div>
+            <div class="service-badge fade-up">
+                <span class="service-badge-icon">&#128062;</span>
+                <span class="service-badge-text">Animali ammessi</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chi Siamo -->
+    <section class="chi-siamo" id="chi-siamo">
+        <div class="section-header">
+            <div class="section-label fade-up">La Nostra Storia</div>
+            <h2 class="section-title fade-up">Chi Siamo</h2>
+        </div>
+        <div class="chi-siamo-layout">
+            <div class="chi-siamo-img fade-up">
+                <img src="interni-scala.jpeg" alt="Interni del Casale dell'Acquabona" loading="lazy">
+            </div>
+            <div class="chi-siamo-text fade-up">
+                <p>
+                    Il Casale dell'Acquabona &egrave; una struttura a conduzione familiare
+                    immersa nelle colline verdi di Montefanovecchio. <strong>Marco e Celina</strong>
+                    vi accoglieranno con la genuina ospitalit&agrave; marchigiana, insieme
+                    ai loro inseparabili collie <strong>Astro e Luna</strong>.
+                </p>
+                <div class="motto">&laquo;Qui i ritmi li detta la natura, non l'orologio.&raquo;</div>
+                <p>
+                    Cinque camere arredate con cura e semplicit&agrave;, una cucina
+                    che racconta le tradizioni di questa terra e un panorama che toglie
+                    il fiato: questo &egrave; il Casale. Un luogo dove rallentare,
+                    respirare e riscoprire il piacere delle cose autentiche.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recensioni -->
+    <section class="recensioni">
+        <div class="section-header">
+            <div class="section-label fade-up">Dicono di Noi</div>
+            <h2 class="section-title fade-up">Le Voci dei Nostri Ospiti</h2>
+            <p class="section-subtitle fade-up">Oltre 100 recensioni positive su Booking, TripAdvisor e Google</p>
+        </div>
+        <div class="recensioni-grid">
+            <div class="review-card fade-up">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&laquo;Posto incantevole, camere pulite e curate. Il cibo &egrave; eccezionale, porzioni generose e tutto genuino. Marco e Celina sono ospiti fantastici.&raquo;</p>
+                <div class="review-author">Famiglia R.</div>
+                <div class="review-source">Booking.com</div>
+            </div>
+            <div class="review-card fade-up">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&laquo;Agriturismo bellissimo, panorama mozzafiato sulle colline. Il cuoco &egrave; bravissimo, la cucina tradizionale marchigiana al suo meglio. Torneremo sicuramente!&raquo;</p>
+                <div class="review-author">Laura M.</div>
+                <div class="review-source">TripAdvisor</div>
+            </div>
+            <div class="review-card fade-up">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&laquo;Tranquillit&agrave; assoluta, accoglienza calorosa e un rapporto qualit&agrave;-prezzo eccellente. I cani del casale sono adorabili. Perfetto per staccare dalla routine.&raquo;</p>
+                <div class="review-author">Andreas K.</div>
+                <div class="review-source">Google Reviews</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contatti -->
     <section class="info" id="contatti">
         <div class="info-content">
@@ -1386,7 +1612,7 @@
             <div class="info-item fade-up">
                 <h4>Contatti</h4>
                 <p>
-                    <a href="tel:+390733865000">+39 0733 865XXX</a><br>
+                    <a href="tel:+393386575725">+39 338 657 5725</a><br>
                     <a href="mailto:info@ilcasaledellacquabona.it">info@ilcasaledellacquabona.it</a>
                 </p>
             </div>
@@ -1468,7 +1694,7 @@
     </div>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/390733865000" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contattaci su WhatsApp">
+    <a href="https://wa.me/393386575725" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contattaci su WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
@@ -1583,7 +1809,7 @@
                 message += '\nNote: ' + notes;
             }
 
-            var mailtoLink = 'mailto:info@ilcasaledellacquabona.it?subject=' +
+            var mailtoLink = 'mailto:marcocapodacqua@hotmail.it?subject=' +
                 encodeURIComponent('Richiesta prenotazione - ' + roomType) +
                 '&body=' + encodeURIComponent(message);
 
