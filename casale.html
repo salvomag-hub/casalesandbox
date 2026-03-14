@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casale dell'Acquabuona | Agriturismo a Montefano, Marche</title>
+    <meta name="description" content="Casale dell'Acquabuona: agriturismo di charme nelle colline di Montefano (MC). Camere con travi a vista, cucina marchigiana, a 20 min dal mare e da Recanati.">
+    <meta name="keywords" content="agriturismo marche, casale montefano, bed and breakfast macerata, vacanze marche, agriturismo conero, recanati, riviera del conero">
+    <meta property="og:title" content="Casale dell'Acquabuona - Agriturismo di Charme a Montefano">
+    <meta property="og:description" content="Un'oasi di pace nelle colline marchigiane. Camere rustiche, cucina tipica, a due passi dal Conero e da Recanati.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c4a3e;
+            --accent: #c9a961;
+            --light: #f7f5f2;
+            --dark: #1a2e25;
+            --text: #3a4a3a;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background: var(--light);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(44, 74, 62, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0.8rem 5%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile menu overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(44, 74, 62, 0.98);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        .mobile-menu.active { display: flex; }
+
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            letter-spacing: 0.1rem;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu a:hover { color: var(--accent); }
+
+        /* ========== HERO ========== */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('casale-esterno.jpg') center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(44,74,62,0.2) 0%,
+                rgba(26,46,37,0.6) 60%,
+                rgba(26,46,37,0.85) 100%
+            );
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 12%;
+            left: 5%;
+            right: 5%;
+            color: var(--white);
+            z-index: 10;
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            font-weight: 300;
+            max-width: 520px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--white);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            opacity: 0.7;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+            animation: scrollPulse 2s infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(15px); opacity: 0.4; }
+        }
+
+        /* ========== SECTIONS COMMON ========== */
+        section {
+            padding: 6rem 5%;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: #777;
+            max-width: 600px;
+            margin: 1rem auto 0;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ========== OFFERTE ========== */
+        .offers {
+            background: var(--white);
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .offer-card {
+            background: var(--light);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .offer-card:hover::before { transform: scaleX(1); }
+
+        .offer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .offer-number {
+            font-size: 3.5rem;
+            color: var(--accent);
+            opacity: 0.15;
+            font-family: 'Cormorant Garamond', serif;
+            position: absolute;
+            top: 0.8rem;
+            right: 1.5rem;
+        }
+
+        .offer-title {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .offer-desc {
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-price {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 300;
+        }
+
+        .offer-price span {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* ========== CAMERE ========== */
+        .rooms {
+            background: var(--dark);
+            color: var(--white);
+            padding: 6rem 0;
+        }
+
+        .rooms .section-header {
+            padding: 0 5%;
+        }
+
+        .rooms .section-title { color: var(--white); }
+        .rooms .section-subtitle { color: rgba(255,255,255,0.6); }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .room-card {
+            position: relative;
+            height: 520px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .room-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .room-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(26,46,37,0.95) 0%,
+                rgba(26,46,37,0.3) 50%,
+                transparent 100%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+            transition: background 0.4s ease;
+        }
+
+        .room-card:hover .room-overlay {
+            background: linear-gradient(
+                to top,
+                rgba(26,46,37,0.98) 0%,
+                rgba(26,46,37,0.5) 60%,
+                rgba(26,46,37,0.2) 100%
+            );
+        }
+
+        .room-name {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .room-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .room-feature {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid rgba(201,169,97,0.4);
+            color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .room-price-tag {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-top: 0.5rem;
+        }
+
+        .room-price-tag span {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ========== PANORAMA BANNER ========== */
+        .panorama {
+            position: relative;
+            height: 50vh;
+            min-height: 300px;
+            overflow: hidden;
+        }
+
+        .panorama img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .panorama-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(26,46,37,0.3) 0%,
+                rgba(26,46,37,0.15) 50%,
+                rgba(26,46,37,0.4) 100%
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .panorama-text {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .panorama-text h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .panorama-text p {
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            opacity: 0.9;
+        }
+
+        /* ========== GALLERIA ========== */
+        .gallery {
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid .gallery-item:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:first-child {
+            aspect-ratio: auto;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,46,37,0.5), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover::after { opacity: 1; }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 1.2rem;
+            left: 1.2rem;
+            color: var(--white);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== RISTORANTE ========== */
+        .ristorante {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 80vh;
+            padding: 0;
+        }
+
+        .ristorante-image {
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        .ristorante-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .ristorante-content {
+            padding: 5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--white);
+        }
+
+        .ristorante-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #555;
+            margin: 1.5rem 0;
+        }
+
+        .ristorante-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--light);
+            border-radius: 4px;
+        }
+
+        .highlight-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-weight: 400;
+        }
+
+        .highlight-item p {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.2rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-radius: 2px;
+            margin-top: 1rem;
+            align-self: flex-start;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* ========== TERRITORIO ========== */
+        .territorio {
+            background: var(--white);
+        }
+
+        .territorio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .territorio-card {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--light);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .territorio-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .territorio-card-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .territorio-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .territorio-card:hover .territorio-card-img img {
+            transform: scale(1.08);
+        }
+
+        .territorio-card-body {
+            padding: 2rem;
+        }
+
+        .territorio-card-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .territorio-card-body h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .territorio-card-body p {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        .territorio-distance {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.72rem;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.05rem;
+        }
+
+        /* ========== CONTATTI / INFO ========== */
+        .info {
+            background: var(--primary);
+            color: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .info .section-title { color: var(--white); }
+
+        .info-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .info-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info-item a:hover { color: var(--accent); }
+
+        .map-container {
+            height: 450px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(80%) contrast(1.1) opacity(0.85);
+            transition: filter 0.4s;
+        }
+
+        .map-container:hover iframe {
+            filter: grayscale(0%) contrast(1) opacity(1);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        .footer-text {
+            font-size: 0.8rem;
+            opacity: 0.4;
+            letter-spacing: 0.05rem;
+        }
+
+        /* ========== MODAL ========== */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(26,46,37,0.92);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 520px;
+            padding: 3rem;
+            border-radius: 6px;
+            position: relative;
+            transform: translateY(30px) scale(0.97);
+            transition: transform 0.4s;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0) scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary);
+            transition: transform 0.3s;
+            line-height: 1;
+        }
+
+        .close-modal:hover { transform: rotate(90deg); }
+
+        .modal h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            margin-bottom: 0.4rem;
+            color: #888;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid #e0ddd8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+            border-radius: 3px;
+            background: var(--light);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 3px;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* ========== WHATSAPP BUTTON ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 900;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .offers-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .territorio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid .gallery-item:first-child {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            section { padding: 4rem 5%; }
+
+            .hero-content { bottom: 15%; }
+
+            .hero-title {
+                font-size: clamp(2.2rem, 10vw, 3.5rem);
+            }
+
+            .offers-grid,
+            .territorio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rooms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .room-card {
+                height: 400px;
+            }
+
+            .room-overlay {
+                background: linear-gradient(
+                    to top,
+                    rgba(26,46,37,0.95) 0%,
+                    rgba(26,46,37,0.2) 60%,
+                    transparent 100%
+                );
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.3rem;
+            }
+
+            .gallery-grid .gallery-item:first-child {
+                grid-column: span 2;
+            }
+
+            .ristorante {
+                grid-template-columns: 1fr;
+            }
+
+            .ristorante-image {
+                min-height: 300px;
+            }
+
+            .ristorante-content {
+                padding: 3rem 5%;
+            }
+
+            .ristorante-highlights {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .scroll-indicator { display: none; }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 1.2rem;
+                right: 1.2rem;
+                width: 50px;
+                height: 50px;
+            }
+
+            .footer-links {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-desc { font-size: 0.9rem; }
+            .room-card { height: 350px; }
+            .ristorante-highlights { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-grid .gallery-item:first-child { grid-column: span 1; }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">Acquabuona</a>
+        <ul class="nav-links">
+            <li><a href="#offerte">Offerte</a></li>
+            <li><a href="#camere">Camere</a></li>
+            <li><a href="#galleria">Galleria</a></li>
+            <li><a href="#ristorante">Ristorante</a></li>
+            <li><a href="#territorio">Territorio</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#offerte">Offerte</a>
+        <a href="#camere">Camere</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#ristorante">Ristorante</a>
+        <a href="#territorio">Territorio</a>
+        <a href="#contatti">Contatti</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle">Agriturismo di Charme &mdash; Montefano</div>
+            <h1 class="hero-title">Casale<br>dell'Acquabuona</h1>
+            <p class="hero-desc">Un'oasi di pace immersa nelle colline marchigiane, tra il profumo della campagna e la brezza del mare Adriatico.</p>
+            <a href="#camere" class="hero-cta">Scopri le Camere</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scorri</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Offerte -->
+    <section class="offers" id="offerte">
+        <div class="section-header">
+            <div class="section-label fade-up">Esperienze Esclusive</div>
+            <h2 class="section-title fade-up">Le Nostre Offerte</h2>
+            <p class="section-subtitle fade-up">Pacchetti pensati per farvi vivere le Marche nel modo migliore</p>
+        </div>
+        <div class="offers-grid">
+            <div class="offer-card fade-up" onclick="openModal('Weekend Romantico', 290)">
+                <div class="offer-number">01</div>
+                <h3 class="offer-title">Weekend Romantico</h3>
+                <p class="offer-desc">2 notti per 2 persone con colazione contadina, cena romantica a lume di candela e bottiglia di Rosso Conero.</p>
+                <div class="offer-price">&euro;290 <span>/ coppia</span></div>
+            </div>
+            <div class="offer-card fade-up" onclick="openModal('Settimana Relax', 750)">
+                <div class="offer-number">02</div>
+                <h3 class="offer-title">Settimana Relax</h3>
+                <p class="offer-desc">7 notti con colazione bio, una cena inclusa, accesso al giardino con vista colline e late check-out.</p>
+                <div class="offer-price">&euro;750 <span>/ coppia</span></div>
+            </div>
+            <div class="offer-card fade-up" onclick="openModal('Esperienza Natura', 480)">
+                <div class="offer-number">03</div>
+                <h3 class="offer-title">Esperienza Natura</h3>
+                <p class="offer-desc">3 notti con trekking guidato nei Sibillini, degustazione vini e pranzo con prodotti a km zero.</p>
+                <div class="offer-price">&euro;480 <span>/ coppia</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Camere -->
+    <section class="rooms" id="camere">
+        <div class="section-header">
+            <div class="section-label fade-up">Ospitalit&agrave;</div>
+            <h2 class="section-title fade-up">Le Nostre Camere</h2>
+            <p class="section-subtitle fade-up">Travi a vista, letti in ferro battuto e il silenzio della campagna marchigiana</p>
+        </div>
+        <div class="rooms-grid">
+            <div class="room-card" onclick="openModal('Camera Matrimoniale', 90)">
+                <img src="camera-matrimoniale.jpeg" alt="Camera Matrimoniale - Casale dell'Acquabuona" loading="lazy">
+                <div class="room-overlay">
+                    <h3 class="room-name">Camera Matrimoniale</h3>
+                    <div class="room-features">
+                        <span class="room-feature">Letto Ferro Battuto</span>
+                        <span class="room-feature">Travi a Vista</span>
+                        <span class="room-feature">Climatizzata</span>
+                    </div>
+                    <div class="room-price-tag">da &euro;90 <span>/ notte</span></div>
+                </div>
+            </div>
+            <div class="room-card" onclick="openModal('Camera Superior', 110)">
+                <img src="camera-superior.jpeg" alt="Camera Superior con lucernario - Casale dell'Acquabuona" loading="lazy">
+                <div class="room-overlay">
+                    <h3 class="room-name">Camera Superior</h3>
+                    <div class="room-features">
+                        <span class="room-feature">Lucernario</span>
+                        <span class="room-feature">Vista Colline</span>
+                        <span class="room-feature">Bagno Privato</span>
+                    </div>
+                    <div class="room-price-tag">da &euro;110 <span>/ notte</span></div>
+                </div>
+            </div>
+            <div class="room-card" onclick="openModal('Camera Familiare', 130)">
+                <img src="camera-familiare.jpeg" alt="Camera Familiare spaziosa - Casale dell'Acquabuona" loading="lazy">
+                <div class="room-overlay">
+                    <h3 class="room-name">Camera Familiare</h3>
+                    <div class="room-features">
+                        <span class="room-feature">Spaziosa</span>
+                        <span class="room-feature">Letto Extra</span>
+                        <span class="room-feature">Travi a Vista</span>
+                    </div>
+                    <div class="room-price-tag">da &euro;130 <span>/ notte</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panorama -->
+    <div class="panorama">
+        <img src="vista-colline.jpg" alt="Panorama delle colline marchigiane dal Casale dell'Acquabuona" loading="lazy">
+        <div class="panorama-overlay">
+            <div class="panorama-text fade-up">
+                <h2>Il panorama che vi aspetta</h2>
+                <p>Le colline marchigiane viste dal Casale</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Galleria -->
+    <section class="gallery" id="galleria">
+        <div class="section-header">
+            <div class="section-label fade-up">Scopri il Casale</div>
+            <h2 class="section-title fade-up">Galleria</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="casale-esterno.jpg" alt="Facciata del Casale dell'Acquabuona al tramonto" loading="lazy">
+                <span class="gallery-label">Il Casale al Tramonto</span>
+            </div>
+            <div class="gallery-item">
+                <img src="vista-colline.jpg" alt="Panorama colline marchigiane" loading="lazy">
+                <span class="gallery-label">Il Panorama</span>
+            </div>
+            <div class="gallery-item">
+                <img src="interni-scala.jpeg" alt="Scala interna in legno" loading="lazy">
+                <span class="gallery-label">Gli Interni</span>
+            </div>
+            <div class="gallery-item">
+                <img src="camera-matrimoniale.jpeg" alt="Camera matrimoniale" loading="lazy">
+                <span class="gallery-label">Le Camere</span>
+            </div>
+            <div class="gallery-item">
+                <img src="bagno.jpeg" alt="Bagno con doccia e finiture in legno" loading="lazy">
+                <span class="gallery-label">I Bagni</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ristorante -->
+    <section class="ristorante" id="ristorante">
+        <div class="ristorante-image">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0c/68/ac/8d/il-casale-dell-acquabona.jpg" alt="Ristorante del Casale" loading="lazy">
+        </div>
+        <div class="ristorante-content">
+            <div class="section-label fade-up">Gastronomia</div>
+            <h2 class="section-title fade-up">Il Ristorante</h2>
+            <p class="ristorante-text fade-up">
+                La cucina del Casale celebra i sapori autentici delle Marche.
+                Ingredienti dal nostro orto, carni di allevamenti locali,
+                formaggi di pecora e vini DOC selezionati. Ogni piatto racconta
+                la tradizione di questa terra generosa.
+            </p>
+            <div class="ristorante-highlights fade-up">
+                <div class="highlight-item">
+                    <div class="highlight-icon">&#127813;</div>
+                    <h4>Km Zero</h4>
+                    <p>Prodotti dal nostro orto</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">&#127863;</div>
+                    <h4>Vini DOC</h4>
+                    <p>Selezione marchigiana</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">&#127858;</div>
+                    <h4>Colazione</h4>
+                    <p>8:00 &ndash; 10:00</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">&#127769;</div>
+                    <h4>Cena</h4>
+                    <p>19:30 &ndash; 21:30</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Territorio -->
+    <section class="territorio" id="territorio">
+        <div class="section-header">
+            <div class="section-label fade-up">Esplora le Marche</div>
+            <h2 class="section-title fade-up">Il Territorio</h2>
+            <p class="section-subtitle fade-up">Tra arte, mare e montagna: tutto a portata di mano dal Casale</p>
+        </div>
+        <div class="territorio-grid">
+            <div class="territorio-card fade-up">
+                <div class="territorio-card-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Recanati_z06.JPG/1280px-Recanati_z06.JPG" alt="Recanati - Colle dell'Infinito" loading="lazy">
+                </div>
+                <div class="territorio-card-body">
+                    <div class="territorio-card-tag">Cultura &amp; Poesia</div>
+                    <h3>Recanati</h3>
+                    <p>La citt&agrave; di Giacomo Leopardi e il celebre Colle dell'Infinito. Visitate Casa Leopardi, il Museo Beniamino Gigli e perdetevi tra i vicoli del borgo con panorami mozzafiato sulle colline.</p>
+                    <span class="territorio-distance">&rarr; 20 minuti in auto</span>
+                </div>
+            </div>
+            <div class="territorio-card fade-up">
+                <div class="territorio-card-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Numana_spiaggia.jpg/1280px-Numana_spiaggia.jpg" alt="Spiagge della Riviera del Conero" loading="lazy">
+                </div>
+                <div class="territorio-card-body">
+                    <div class="territorio-card-tag">Mare &amp; Spiagge</div>
+                    <h3>Riviera del Conero</h3>
+                    <p>Spiagge premiate Bandiera Blu, calette nascoste tra le falesie bianche e acque cristalline. Sirolo, Numana e Portonovo: il paradiso dell'Adriatico per le vostre estati.</p>
+                    <span class="territorio-distance">&rarr; 30 minuti in auto</span>
+                </div>
+            </div>
+            <div class="territorio-card fade-up">
+                <div class="territorio-card-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Basilica_della_Santa_Casa.jpg/800px-Basilica_della_Santa_Casa.jpg" alt="Basilica di Loreto" loading="lazy">
+                </div>
+                <div class="territorio-card-body">
+                    <div class="territorio-card-tag">Fede &amp; Storia</div>
+                    <h3>Loreto</h3>
+                    <p>Il Santuario della Santa Casa, meta di pellegrinaggio da tutto il mondo. Una basilica maestosa che custodisce la tradizione della casa della Vergine Maria.</p>
+                    <span class="territorio-distance">&rarr; 25 minuti in auto</span>
+                </div>
+            </div>
+            <div class="territorio-card fade-up">
+                <div class="territorio-card-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Macerata%2C_Sferisterio.JPG/1280px-Macerata%2C_Sferisterio.JPG" alt="Sferisterio di Macerata" loading="lazy">
+                </div>
+                <div class="territorio-card-body">
+                    <div class="territorio-card-tag">Arte &amp; Spettacolo</div>
+                    <h3>Macerata</h3>
+                    <p>Citt&agrave; universitaria con lo Sferisterio, teatro all'aperto che ogni estate ospita il celebre Macerata Opera Festival. Centro storico elegante e vivace.</p>
+                    <span class="territorio-distance">&rarr; 15 minuti in auto</span>
+                </div>
+            </div>
+            <div class="territorio-card fade-up">
+                <div class="territorio-card-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Fiastra1.JPG/1280px-Fiastra1.JPG" alt="Lago di Fiastra - Monti Sibillini" loading="lazy">
+                </div>
+                <div class="territorio-card-body">
+                    <div class="territorio-card-tag">Natura &amp; Avventura</div>
+                    <h3>Monti Sibillini</h3>
+                    <p>Il Parco Nazionale dei Monti Sibillini: trekking, Lago di Fiastra, la Gola dell'Infernaccio e la fioritura di Castelluccio. Natura incontaminata a un'ora di distanza.</p>
+                    <span class="territorio-distance">&rarr; 60 minuti in auto</span>
+                </div>
+            </div>
+            <div class="territorio-card fade-up">
+                <div class="territorio-card-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Montefano01.jpg/1280px-Montefano01.jpg" alt="Montefano" loading="lazy">
+                </div>
+                <div class="territorio-card-body">
+                    <div class="territorio-card-tag">Il Nostro Borgo</div>
+                    <h3>Montefano</h3>
+                    <p>Il borgo che ci ospita: un antico paese medievale con viste panoramiche sulle colline. Sagre, enogastronomia e la genuina accoglienza marchigiana.</p>
+                    <span class="territorio-distance">&rarr; 5 minuti in auto</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section class="info" id="contatti">
+        <div class="info-content">
+            <h2 class="fade-up">Vieni a Trovarci</h2>
+            <div class="info-item fade-up">
+                <h4>Indirizzo</h4>
+                <p>Contrada Acquabuona, 12<br>62010 Montefano (MC)<br>Marche, Italia</p>
+            </div>
+            <div class="info-item fade-up">
+                <h4>Contatti</h4>
+                <p>
+                    <a href="tel:+390733865000">+39 0733 865XXX</a><br>
+                    <a href="mailto:info@ilcasaledellacquabona.it">info@ilcasaledellacquabona.it</a>
+                </p>
+            </div>
+            <div class="info-item fade-up">
+                <h4>Check-in / Check-out</h4>
+                <p>Arrivo: 15:00 &ndash; 20:00<br>Partenza: entro le 11:00</p>
+            </div>
+            <button class="cta-btn fade-up" onclick="openModal('Richiesta Informazioni', 0)">Richiedi Informazioni</button>
+        </div>
+        <div class="map-container fade-up">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.1234567890123!2d13.4378!3d43.3669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDIyJzAwLjkiTiAxM8KwMjYnMTYuMSJF!5e0!3m2!1sit!2sit!4v1234567890"
+                allowfullscreen=""
+                loading="lazy"
+                title="Mappa Casale dell'Acquabuona">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Casale dell'Acquabuona</div>
+        <div class="footer-links">
+            <a href="#offerte">Offerte</a>
+            <a href="#camere">Camere</a>
+            <a href="#ristorante">Ristorante</a>
+            <a href="#territorio">Territorio</a>
+            <a href="#contatti">Contatti</a>
+        </div>
+        <p class="footer-text">Contrada Acquabuona, 12 &mdash; 62010 Montefano (MC) &mdash; P.IVA 01811530433</p>
+        <p class="footer-text" style="margin-top: 0.5rem;">&copy; 2026 Casale dell'Acquabuona. Tutti i diritti riservati.</p>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()" aria-label="Chiudi">&times;</button>
+            <h2 id="modalTitle">Prenota il tuo soggiorno</h2>
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Tipo di Soggiorno</label>
+                    <input type="text" id="modalRoomType" readonly>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Check-in</label>
+                        <input type="date" id="checkinDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Check-out</label>
+                        <input type="date" id="checkoutDate" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" id="guestName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cognome</label>
+                        <input type="text" id="guestSurname" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="guestEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefono</label>
+                    <input type="tel" id="guestPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Note (opzionale)</label>
+                    <textarea id="guestNotes" rows="3" placeholder="Allergie, orario di arrivo, richieste speciali..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Invia Richiesta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/390733865000" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contattaci su WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script>
+        // ===== Hamburger Menu =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ===== Navbar scroll =====
+        var lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // ===== Scroll Animations (IntersectionObserver) =====
+        var observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        var fadeObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up, .fade-in').forEach(function(el) {
+            fadeObserver.observe(el);
+        });
+
+        // Stagger animation for grid children
+        var staggerObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var children = entry.target.querySelectorAll('.fade-up');
+                    children.forEach(function(child, i) {
+                        child.style.transitionDelay = (i * 0.12) + 's';
+                        child.classList.add('visible');
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.offers-grid, .territorio-grid').forEach(function(grid) {
+            staggerObserver.observe(grid);
+        });
+
+        // ===== Modal =====
+        function openModal(roomType, price) {
+            var display = price > 0 ? roomType + ' \u2014 da \u20AC' + price : roomType;
+            document.getElementById('modalRoomType').value = display;
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Set min date to today
+            var today = new Date().toISOString().split('T')[0];
+            var checkin = document.getElementById('checkinDate');
+            var checkout = document.getElementById('checkoutDate');
+            checkin.setAttribute('min', today);
+            checkout.setAttribute('min', today);
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            var name = document.getElementById('guestName').value;
+            var surname = document.getElementById('guestSurname').value;
+            var email = document.getElementById('guestEmail').value;
+            var phone = document.getElementById('guestPhone').value;
+            var roomType = document.getElementById('modalRoomType').value;
+            var checkin = document.getElementById('checkinDate').value;
+            var checkout = document.getElementById('checkoutDate').value;
+            var notes = document.getElementById('guestNotes').value;
+
+            // Build WhatsApp / mailto message
+            var message = 'Salve, vorrei prenotare: ' + roomType +
+                '\nNome: ' + name + ' ' + surname +
+                '\nEmail: ' + email +
+                '\nTelefono: ' + phone +
+                '\nCheck-in: ' + checkin +
+                '\nCheck-out: ' + checkout;
+            if (notes) {
+                message += '\nNote: ' + notes;
+            }
+
+            var mailtoLink = 'mailto:info@ilcasaledellacquabona.it?subject=' +
+                encodeURIComponent('Richiesta prenotazione - ' + roomType) +
+                '&body=' + encodeURIComponent(message);
+
+            window.location.href = mailtoLink;
+            closeModal();
+        }
+
+        // Close modal on outside click
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === e.currentTarget) { closeModal(); }
+        });
+
+        // Close modal on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') { closeModal(); }
+        });
+    </script>
+
+</body>
+</html>
