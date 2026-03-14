@@ -179,9 +179,9 @@
             inset: 0;
             background: linear-gradient(
                 to bottom,
-                rgba(44,74,62,0.2) 0%,
-                rgba(26,46,37,0.6) 60%,
-                rgba(26,46,37,0.85) 100%
+                rgba(26,46,37,0.4) 0%,
+                rgba(26,46,37,0.65) 50%,
+                rgba(15,25,18,0.9) 100%
             );
         }
 
@@ -206,6 +206,7 @@
             font-size: clamp(2.8rem, 7vw, 5.5rem);
             line-height: 1.05;
             margin-bottom: 1.5rem;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
         }
 
         .hero-desc {
@@ -214,6 +215,7 @@
             max-width: 520px;
             line-height: 1.8;
             opacity: 0.9;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.4);
         }
 
         .hero-cta {
@@ -486,12 +488,7 @@
         .panorama-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(26,46,37,0.3) 0%,
-                rgba(26,46,37,0.15) 50%,
-                rgba(26,46,37,0.4) 100%
-            );
+            background: rgba(15,25,18,0.55);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -505,6 +502,7 @@
         .panorama-text h2 {
             font-size: clamp(1.8rem, 4vw, 3rem);
             margin-bottom: 0.5rem;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.6);
         }
 
         .panorama-text p {
@@ -512,6 +510,7 @@
             font-weight: 300;
             letter-spacing: 0.2rem;
             opacity: 0.9;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.5);
         }
 
         /* ========== GALLERIA ========== */
@@ -691,35 +690,22 @@
 
         .territorio-card {
             position: relative;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
             background: var(--light);
+            padding: 2.5rem 2rem;
+            border-left: 3px solid var(--accent);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .territorio-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
 
-        .territorio-card-img {
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .territorio-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .territorio-card:hover .territorio-card-img img {
-            transform: scale(1.08);
-        }
-
-        .territorio-card-body {
-            padding: 2rem;
+        .territorio-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .territorio-card-tag {
@@ -730,13 +716,13 @@
             margin-bottom: 0.5rem;
         }
 
-        .territorio-card-body h3 {
+        .territorio-card h3 {
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 0.8rem;
         }
 
-        .territorio-card-body p {
+        .territorio-card p {
             font-size: 0.88rem;
             line-height: 1.7;
             color: #666;
@@ -1345,70 +1331,46 @@
         </div>
         <div class="territorio-grid">
             <div class="territorio-card fade-up">
-                <div class="territorio-card-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Recanati_z06.JPG/1280px-Recanati_z06.JPG" alt="Recanati - Colle dell'Infinito" loading="lazy">
-                </div>
-                <div class="territorio-card-body">
-                    <div class="territorio-card-tag">Cultura &amp; Poesia</div>
-                    <h3>Recanati</h3>
-                    <p>La citt&agrave; di Giacomo Leopardi e il celebre Colle dell'Infinito. Visitate Casa Leopardi, il Museo Beniamino Gigli e perdetevi tra i vicoli del borgo con panorami mozzafiato sulle colline.</p>
-                    <span class="territorio-distance">&rarr; 20 minuti in auto</span>
-                </div>
+                <div class="territorio-icon">&#127970;</div>
+                <div class="territorio-card-tag">Cultura &amp; Poesia</div>
+                <h3>Recanati</h3>
+                <p>La citt&agrave; di Giacomo Leopardi e il celebre Colle dell'Infinito. Visitate Casa Leopardi, il Museo Beniamino Gigli e perdetevi tra i vicoli del borgo con panorami mozzafiato.</p>
+                <span class="territorio-distance">&rarr; 20 minuti in auto</span>
             </div>
             <div class="territorio-card fade-up">
-                <div class="territorio-card-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Numana_spiaggia.jpg/1280px-Numana_spiaggia.jpg" alt="Spiagge della Riviera del Conero" loading="lazy">
-                </div>
-                <div class="territorio-card-body">
-                    <div class="territorio-card-tag">Mare &amp; Spiagge</div>
-                    <h3>Riviera del Conero</h3>
-                    <p>Spiagge premiate Bandiera Blu, calette nascoste tra le falesie bianche e acque cristalline. Sirolo, Numana e Portonovo: il paradiso dell'Adriatico per le vostre estati.</p>
-                    <span class="territorio-distance">&rarr; 30 minuti in auto</span>
-                </div>
+                <div class="territorio-icon">&#127958;</div>
+                <div class="territorio-card-tag">Mare &amp; Spiagge</div>
+                <h3>Riviera del Conero</h3>
+                <p>Spiagge Bandiera Blu, calette tra falesie bianche e acque cristalline. Sirolo, Numana e Portonovo: il paradiso dell'Adriatico per le vostre estati.</p>
+                <span class="territorio-distance">&rarr; 30 minuti in auto</span>
             </div>
             <div class="territorio-card fade-up">
-                <div class="territorio-card-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Basilica_della_Santa_Casa.jpg/800px-Basilica_della_Santa_Casa.jpg" alt="Basilica di Loreto" loading="lazy">
-                </div>
-                <div class="territorio-card-body">
-                    <div class="territorio-card-tag">Fede &amp; Storia</div>
-                    <h3>Loreto</h3>
-                    <p>Il Santuario della Santa Casa, meta di pellegrinaggio da tutto il mondo. Una basilica maestosa che custodisce la tradizione della casa della Vergine Maria.</p>
-                    <span class="territorio-distance">&rarr; 25 minuti in auto</span>
-                </div>
+                <div class="territorio-icon">&#9962;</div>
+                <div class="territorio-card-tag">Fede &amp; Storia</div>
+                <h3>Loreto</h3>
+                <p>Il Santuario della Santa Casa, meta di pellegrinaggio da tutto il mondo. Una basilica maestosa nel cuore delle colline marchigiane.</p>
+                <span class="territorio-distance">&rarr; 25 minuti in auto</span>
             </div>
             <div class="territorio-card fade-up">
-                <div class="territorio-card-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Macerata%2C_Sferisterio.JPG/1280px-Macerata%2C_Sferisterio.JPG" alt="Sferisterio di Macerata" loading="lazy">
-                </div>
-                <div class="territorio-card-body">
-                    <div class="territorio-card-tag">Arte &amp; Spettacolo</div>
-                    <h3>Macerata</h3>
-                    <p>Citt&agrave; universitaria con lo Sferisterio, teatro all'aperto che ogni estate ospita il celebre Macerata Opera Festival. Centro storico elegante e vivace.</p>
-                    <span class="territorio-distance">&rarr; 15 minuti in auto</span>
-                </div>
+                <div class="territorio-icon">&#127917;</div>
+                <div class="territorio-card-tag">Arte &amp; Spettacolo</div>
+                <h3>Macerata</h3>
+                <p>Lo Sferisterio, teatro all'aperto che ogni estate ospita il Macerata Opera Festival. Centro storico universitario elegante e vivace.</p>
+                <span class="territorio-distance">&rarr; 15 minuti in auto</span>
             </div>
             <div class="territorio-card fade-up">
-                <div class="territorio-card-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Fiastra1.JPG/1280px-Fiastra1.JPG" alt="Lago di Fiastra - Monti Sibillini" loading="lazy">
-                </div>
-                <div class="territorio-card-body">
-                    <div class="territorio-card-tag">Natura &amp; Avventura</div>
-                    <h3>Monti Sibillini</h3>
-                    <p>Il Parco Nazionale dei Monti Sibillini: trekking, Lago di Fiastra, la Gola dell'Infernaccio e la fioritura di Castelluccio. Natura incontaminata a un'ora di distanza.</p>
-                    <span class="territorio-distance">&rarr; 60 minuti in auto</span>
-                </div>
+                <div class="territorio-icon">&#9968;</div>
+                <div class="territorio-card-tag">Natura &amp; Avventura</div>
+                <h3>Monti Sibillini</h3>
+                <p>Parco Nazionale: trekking, Lago di Fiastra, Gola dell'Infernaccio e la leggendaria fioritura di Castelluccio. Natura incontaminata.</p>
+                <span class="territorio-distance">&rarr; 60 minuti in auto</span>
             </div>
             <div class="territorio-card fade-up">
-                <div class="territorio-card-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Montefano01.jpg/1280px-Montefano01.jpg" alt="Montefano" loading="lazy">
-                </div>
-                <div class="territorio-card-body">
-                    <div class="territorio-card-tag">Il Nostro Borgo</div>
-                    <h3>Montefano</h3>
-                    <p>Il borgo che ci ospita: un antico paese medievale con viste panoramiche sulle colline. Sagre, enogastronomia e la genuina accoglienza marchigiana.</p>
-                    <span class="territorio-distance">&rarr; 5 minuti in auto</span>
-                </div>
+                <div class="territorio-icon">&#127969;</div>
+                <div class="territorio-card-tag">Il Nostro Borgo</div>
+                <h3>Montefano</h3>
+                <p>Antico borgo medievale con viste panoramiche sulle colline. Sagre, enogastronomia e la genuina accoglienza marchigiana vi aspettano.</p>
+                <span class="territorio-distance">&rarr; 5 minuti in auto</span>
             </div>
         </div>
     </section>
