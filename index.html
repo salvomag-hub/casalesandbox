@@ -743,11 +743,11 @@
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             position: relative;
-            overflow: hidden;
             transition: all 0.3s;
             border-radius: 2px;
             margin-top: 1rem;
             align-self: flex-start;
+            white-space: nowrap;
         }
 
         .cta-btn:hover {
@@ -1169,7 +1169,7 @@
         /* ========== WHATSAPP BUTTON ========== */
         .whatsapp-float {
             position: fixed;
-            bottom: 2rem;
+            bottom: 5rem;
             right: 2rem;
             width: 56px;
             height: 56px;
@@ -1178,9 +1178,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 900;
+            z-index: 960;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, bottom 0.4s ease;
             text-decoration: none;
         }
 
@@ -1193,6 +1193,238 @@
             width: 28px;
             height: 28px;
             fill: white;
+        }
+
+        /* ========== VISUAL ENHANCEMENTS ========== */
+
+        /* Parallax-like hero */
+        .hero-bg {
+            background-attachment: fixed;
+        }
+
+        /* Section decorative separator */
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            margin: 1.5rem auto 0;
+        }
+
+        .rooms .section-header::after,
+        .recensioni .section-header::after {
+            background: linear-gradient(to right, var(--accent), transparent);
+        }
+
+        /* Enhanced offer card hover */
+        .offer-card {
+            border: 1px solid transparent;
+        }
+
+        .offer-card:hover {
+            border-color: rgba(201, 169, 97, 0.2);
+            background: var(--white);
+        }
+
+        /* Enhanced room card overlay on hover */
+        .room-card::after {
+            content: 'Scopri →';
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            color: var(--accent);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.4s ease;
+            z-index: 5;
+        }
+
+        .room-card:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Review card hover */
+        .review-card {
+            transition: transform 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(201, 169, 97, 0.3);
+        }
+
+        /* Territory card icon animation */
+        .territorio-card .territorio-icon {
+            transition: transform 0.4s ease;
+        }
+
+        .territorio-card:hover .territorio-icon {
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        /* Gallery item zoom icon overlay */
+        .gallery-item {
+            cursor: pointer;
+        }
+
+        .gallery-item::before {
+            content: '⊕';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 2.5rem;
+            color: var(--white);
+            z-index: 3;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 0.9;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Panorama parallax-like */
+        .panorama img {
+            transition: transform 0.6s ease;
+        }
+
+        .panorama:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Highlight items subtle hover */
+        .highlight-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        /* Service badges hover */
+        .service-badge {
+            transition: transform 0.3s ease;
+        }
+
+        .service-badge:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ========== LIGHTBOX ========== */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 25, 18, 0.95);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.4s ease;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: transform 0.3s, color 0.3s;
+            z-index: 3001;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+            color: var(--accent);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(201, 169, 97, 0.15);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            color: var(--white);
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(201, 169, 97, 0.4);
+            color: var(--accent);
+        }
+
+        .lightbox-prev { left: 1.5rem; }
+        .lightbox-next { right: 1.5rem; }
+
+        @media (max-width: 768px) {
+            .lightbox img {
+                max-width: 96%;
+                max-height: 75vh;
+            }
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+            .hero-bg {
+                background-attachment: scroll;
+            }
         }
 
         /* ========== RESPONSIVE ========== */
@@ -1233,10 +1465,31 @@
 
             section { padding: 4rem 5%; }
 
-            .hero-content { bottom: 15%; }
+            .hero-content {
+                bottom: 15%;
+            }
 
             .hero-title {
-                font-size: clamp(2.2rem, 10vw, 3.5rem);
+                font-size: clamp(2rem, 9vw, 3rem);
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.72rem;
+                letter-spacing: 0.25rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .hero-desc {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                max-width: 100%;
+            }
+
+            .hero-cta {
+                padding: 0.75rem 1.3rem;
+                font-size: 0.65rem;
+                letter-spacing: 0.1rem;
             }
 
             .offers-grid,
@@ -1291,6 +1544,10 @@
                 gap: 2rem;
             }
 
+            .info-content h2 {
+                font-size: 2rem;
+            }
+
             .map-container {
                 height: 300px;
             }
@@ -1301,8 +1558,17 @@
                 grid-template-columns: 1fr;
             }
 
+            .cta-btn {
+                font-size: 0.65rem;
+                padding: 0.85rem 1.5rem;
+                letter-spacing: 0.1rem;
+                white-space: normal;
+                text-align: center;
+                align-self: stretch;
+            }
+
             .whatsapp-float {
-                bottom: 1.2rem;
+                bottom: 5.5rem;
                 right: 1.2rem;
                 width: 50px;
                 height: 50px;
@@ -1918,8 +2184,11 @@
         <div class="footer-links">
             <a href="#offerte">Offerte</a>
             <a href="#camere">Camere</a>
+            <a href="#galleria">Galleria</a>
             <a href="#ristorante">Ristorante</a>
             <a href="#territorio">Territorio</a>
+            <a href="#chi-siamo">Chi Siamo</a>
+            <a href="#recensioni">Recensioni</a>
             <a href="#contatti">Contatti</a>
         </div>
         <p class="footer-text">Contrada Intriglione, 6 &mdash; 62010 Montefanovecchio (MC) &mdash; P.IVA 01811530433</p>
@@ -2000,6 +2269,15 @@
             <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accetta</button>
             <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Rifiuta</button>
         </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Chiudi">×</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Precedente">‹</button>
+        <img id="lightboxImg" src="" alt="">
+        <button class="lightbox-nav lightbox-next" aria-label="Successiva">›</button>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 
     <script>
@@ -2204,6 +2482,90 @@
                 });
             }
         });
+
+        // ===== Lightbox Gallery =====
+        (function() {
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightboxImg');
+            var lightboxCaption = document.getElementById('lightboxCaption');
+            var galleryItems = document.querySelectorAll('.gallery-item');
+            var currentIndex = 0;
+
+            // Build gallery data from items
+            var galleryData = [];
+            galleryItems.forEach(function(item) {
+                var img = item.querySelector('img');
+                var label = item.querySelector('.gallery-label');
+                galleryData.push({
+                    src: img.src,
+                    alt: img.alt,
+                    caption: label ? label.textContent : img.alt
+                });
+            });
+
+            function openLightbox(index) {
+                currentIndex = index;
+                updateLightboxImage();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function updateLightboxImage() {
+                var data = galleryData[currentIndex];
+                lightboxImg.src = data.src;
+                lightboxImg.alt = data.alt;
+                lightboxCaption.textContent = data.caption;
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % galleryData.length;
+                updateLightboxImage();
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
+                updateLightboxImage();
+            }
+
+            // Attach click to gallery items
+            galleryItems.forEach(function(item, i) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openLightbox(i);
+                });
+            });
+
+            // Close button
+            lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+
+            // Nav buttons
+            lightbox.querySelector('.lightbox-prev').addEventListener('click', function(e) {
+                e.stopPropagation();
+                prevImage();
+            });
+            lightbox.querySelector('.lightbox-next').addEventListener('click', function(e) {
+                e.stopPropagation();
+                nextImage();
+            });
+
+            // Click on backdrop to close
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) { closeLightbox(); }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) { return; }
+                if (e.key === 'Escape') { closeLightbox(); }
+                if (e.key === 'ArrowRight') { nextImage(); }
+                if (e.key === 'ArrowLeft') { prevImage(); }
+            });
+        })();
     </script>
 
 </body>
