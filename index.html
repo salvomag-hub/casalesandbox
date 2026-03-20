@@ -1013,12 +1013,49 @@
             color: var(--accent);
         }
 
+        .contatti-map-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         .contatti-map {
             width: 100%;
             height: 500px;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow-lg);
+        }
+
+        .map-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .map-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow);
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .map-link:hover {
+            color: var(--accent);
+            transform: translateX(6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .map-link svg {
+            flex-shrink: 0;
+            color: var(--accent);
         }
 
         /* BOOKING MODAL */
@@ -2201,7 +2238,23 @@
 
                 <button class="btn btn-primary" onclick="openBookingModal()" style="width: 100%; margin-top: 20px;" data-i18n="btn-book">Prenota Diretto</button>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2841.5846647294673!2d13.40432!3d43.40138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d48c4e1f1f1f1%3A0x0!2sCasale%20dell'Acquabona!5e0!3m2!1sit!2sit!4v1234567890" class="contatti-map" allowfullscreen="" loading="lazy" title="Mappa Casale dell'Acquabona"></iframe>
+            <div class="contatti-map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2841.5846647294673!2d13.40432!3d43.40138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d48c4e1f1f1f1%3A0x0!2sCasale%20dell'Acquabona!5e0!3m2!1sit!2sit!4v1234567890" class="contatti-map" allowfullscreen="" loading="lazy" title="Mappa Casale dell'Acquabona"></iframe>
+                <div class="map-links">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=43.40138,13.40432" target="_blank" rel="noopener" class="map-link" data-i18n="map-google">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Apri in Google Maps
+                    </a>
+                    <a href="https://maps.apple.com/?daddr=43.40138,13.40432" target="_blank" rel="noopener" class="map-link" data-i18n="map-apple">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                        Apri in Apple Maps
+                    </a>
+                    <a href="https://waze.com/ul?ll=43.40138,13.40432&navigate=yes" target="_blank" rel="noopener" class="map-link" data-i18n="map-waze">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        Apri in Waze
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2493,6 +2546,9 @@
                 "serv-8": "Giardino Vista Colline",
                 "serv-9": "Prodotti a Km Zero",
                 "serv-10": "Barbecue",
+                "map-google": "Apri in Google Maps",
+                "map-apple": "Apri in Apple Maps",
+                "map-waze": "Apri in Waze",
                 "gallery-title": "Galleria Fotografica",
                 "gallery-subtitle": "Scopri la bellezza di Casale dell'Acquabona",
                 "reviews-title": "Cosa Dicono gli Ospiti",
@@ -2642,6 +2698,9 @@
                 "serv-8": "Garden with Hill View",
                 "serv-9": "Farm-to-Table Products",
                 "serv-10": "Barbecue",
+                "map-google": "Open in Google Maps",
+                "map-apple": "Open in Apple Maps",
+                "map-waze": "Open in Waze",
                 "gallery-title": "Photo Gallery",
                 "gallery-subtitle": "Discover the beauty of Casale dell'Acquabona",
                 "reviews-title": "What Our Guests Say",
