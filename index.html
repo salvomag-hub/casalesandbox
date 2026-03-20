@@ -1055,7 +1055,52 @@
 
         .map-link svg {
             flex-shrink: 0;
-            color: var(--accent);
+        }
+
+        .directions-box {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow);
+            padding: 28px 24px;
+        }
+
+        .directions-box h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .direction-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(44, 74, 62, 0.08);
+        }
+
+        .direction-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .direction-item svg {
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .direction-item strong {
+            display: block;
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .direction-item p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin: 0;
         }
 
         /* BOOKING MODAL */
@@ -2241,18 +2286,42 @@
             <div class="contatti-map-wrapper">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2841.5846647294673!2d13.40432!3d43.40138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d48c4e1f1f1f1%3A0x0!2sCasale%20dell'Acquabona!5e0!3m2!1sit!2sit!4v1234567890" class="contatti-map" allowfullscreen="" loading="lazy" title="Mappa Casale dell'Acquabona"></iframe>
                 <div class="map-links">
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=43.40138,13.40432" target="_blank" rel="noopener" class="map-link" data-i18n="map-google">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Apri in Google Maps
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=43.40138,13.40432" target="_blank" rel="noopener" class="map-link">
+                        <svg width="22" height="22" viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg"><path d="M72.7 25.6L56.2 9.1c-2.8-2.8-6.5-4.3-10.5-4.3-2.6 0-5 .7-7.2 2L52 20.3 72.7 25.6z" fill="#1A73E8"/><path d="M38.5 6.8c-4.7 1.9-8.5 5.5-10.6 10.1L41.5 30.5 52 20.3 38.5 6.8z" fill="#EA4335"/><path d="M25.4 22.3c-1.3 3.2-1.6 6.6-.8 10L41.5 30.5 27.9 16.9c-.9 1.7-1.7 3.5-2.5 5.4z" fill="#FBBC04"/><path d="M24.6 32.3c1.5 6.4 5.7 13.6 12.1 21.3l15.9-18.1L24.6 32.3z" fill="#34A853"/><path d="M36.7 53.6c6.1 7.4 14 15.4 17 18.5 3.2-3.3 11.7-12 18.1-20.7L52.6 35.5 36.7 53.6z" fill="#1A73E8"/><path d="M71.8 51.4c5.2-7 9.1-14.2 10.7-19.8 1-3.4.8-6.8-.4-9.8L56.2 35.5 71.8 51.4z" fill="#EA4335"/><path d="M82.1 21.8c-1.7-4-4.8-7.3-8.6-9.4L56.2 35.5l26-13.7z" fill="#FBBC04"/></svg>
+                        <span data-i18n="map-google">Apri in Google Maps</span>
                     </a>
-                    <a href="https://maps.apple.com/?daddr=43.40138,13.40432" target="_blank" rel="noopener" class="map-link" data-i18n="map-apple">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                        Apri in Apple Maps
+                    <a href="https://maps.apple.com/?daddr=43.40138,13.40432" target="_blank" rel="noopener" class="map-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.4 4 9.5c0 5.6 7 12.1 7.3 12.4.4.3.9.3 1.3 0C13 21.6 20 15.1 20 9.5 20 5.4 16.4 2 12 2z" fill="#34C759"/><path d="M12 6c-2 0-3.5 1.5-3.5 3.5S10 13 12 13s3.5-1.5 3.5-3.5S14 6 12 6z" fill="#fff"/></svg>
+                        <span data-i18n="map-apple">Apri in Apple Maps</span>
                     </a>
-                    <a href="https://waze.com/ul?ll=43.40138,13.40432&navigate=yes" target="_blank" rel="noopener" class="map-link" data-i18n="map-waze">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                        Apri in Waze
+                    <a href="https://waze.com/ul?ll=43.40138,13.40432&navigate=yes" target="_blank" rel="noopener" class="map-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7 2 3 5.8 3 10.5c0 2.3 1 4.4 2.6 5.9-.2 1.5-.8 2.8-1.6 3.6 1.8 0 3.5-.7 4.8-1.7 1 .4 2.1.6 3.2.6 5 0 9-3.8 9-8.4C21 5.8 17 2 12 2z" fill="#33CCFF"/><circle cx="9" cy="10" r="1.2" fill="#333"/><circle cx="15" cy="10" r="1.2" fill="#333"/><path d="M9 13.5c0 0 1.5 1.5 3 1.5s3-1.5 3-1.5" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round"/></svg>
+                        <span data-i18n="map-waze">Apri in Waze</span>
                     </a>
+                </div>
+                <div class="directions-box">
+                    <h4 data-i18n="directions-title">Come Arrivare</h4>
+                    <div class="direction-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                            <strong data-i18n="dir-highway">Da Autostrada A14</strong>
+                            <p data-i18n="dir-highway-desc">Uscita Loreto/Porto Recanati, seguire per Montefano (15 min)</p>
+                        </div>
+                    </div>
+                    <div class="direction-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg>
+                        <div>
+                            <strong data-i18n="dir-airport">Da Aeroporto di Ancona</strong>
+                            <p data-i18n="dir-airport-desc">Aeroporto Raffaello Sanzio, 35 km (circa 30 min)</p>
+                        </div>
+                    </div>
+                    <div class="direction-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><polygon points="12 15 17 21 7 21 12 15"/></svg>
+                        <div>
+                            <strong data-i18n="dir-train">Da Stazione di Macerata</strong>
+                            <p data-i18n="dir-train-desc">Stazione FS Macerata, 18 km (circa 20 min in auto)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2549,6 +2618,13 @@
                 "map-google": "Apri in Google Maps",
                 "map-apple": "Apri in Apple Maps",
                 "map-waze": "Apri in Waze",
+                "directions-title": "Come Arrivare",
+                "dir-highway": "Da Autostrada A14",
+                "dir-highway-desc": "Uscita Loreto/Porto Recanati, seguire per Montefano (15 min)",
+                "dir-airport": "Da Aeroporto di Ancona",
+                "dir-airport-desc": "Aeroporto Raffaello Sanzio, 35 km (circa 30 min)",
+                "dir-train": "Da Stazione di Macerata",
+                "dir-train-desc": "Stazione FS Macerata, 18 km (circa 20 min in auto)",
                 "gallery-title": "Galleria Fotografica",
                 "gallery-subtitle": "Scopri la bellezza di Casale dell'Acquabona",
                 "reviews-title": "Cosa Dicono gli Ospiti",
@@ -2701,6 +2777,13 @@
                 "map-google": "Open in Google Maps",
                 "map-apple": "Open in Apple Maps",
                 "map-waze": "Open in Waze",
+                "directions-title": "How to Get Here",
+                "dir-highway": "From A14 Motorway",
+                "dir-highway-desc": "Exit Loreto/Porto Recanati, follow signs to Montefano (15 min)",
+                "dir-airport": "From Ancona Airport",
+                "dir-airport-desc": "Raffaello Sanzio Airport, 35 km (about 30 min)",
+                "dir-train": "From Macerata Station",
+                "dir-train-desc": "Macerata FS Station, 18 km (about 20 min by car)",
                 "gallery-title": "Photo Gallery",
                 "gallery-subtitle": "Discover the beauty of Casale dell'Acquabona",
                 "reviews-title": "What Our Guests Say",
