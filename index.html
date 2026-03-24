@@ -1846,22 +1846,65 @@
             h2 { font-size: 1.6rem; }
             h3 { font-size: 1.2rem; }
 
+            /* Sticky booking: bottone compatto fisso invece di nasconderlo */
             .sticky-booking {
+                padding: 0;
+                background: none;
+                box-shadow: none;
+                justify-content: flex-end;
+                pointer-events: none;
+            }
+
+            .sticky-booking-text {
                 display: none;
             }
 
+            .sticky-booking .btn {
+                pointer-events: auto;
+                padding: 14px 28px;
+                font-size: 0.85rem;
+                border-radius: 50px;
+                box-shadow: 0 4px 20px rgba(201, 169, 97, 0.4);
+            }
+
+            /* Galleria: 2 colonne anche su mobile */
             .gallery-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
             }
 
+            /* Servizi: 2 colonne compatte */
             .servizi .container {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
 
+            .servizio-icon {
+                font-size: 1.4rem;
+            }
+
+            /* Social proof: riga orizzontale compatta */
             .proof-items {
-                gap: 20px;
-                flex-direction: column;
+                gap: 12px;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .proof-rating {
+                font-size: 1.1rem;
+            }
+
+            .proof-text {
+                font-size: 0.6rem;
+            }
+
+            /* Panorama casale: ridotto per mobile */
+            .panorama-casale {
+                height: 50vh;
+            }
+
+            .panorama-casale-quote {
+                font-size: 1.6rem;
             }
 
             .modal-content {
@@ -1873,8 +1916,21 @@
             }
 
             .hero .btn {
-                padding: 12px 24px;
+                padding: 14px 28px;
                 font-size: 0.85rem;
+                min-height: 48px;
+            }
+
+            /* Touch target minimo 44px */
+            .nav a,
+            .lang-switcher,
+            .btn,
+            .gallery-toggle,
+            .cookie-banner .btn {
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
             }
         }
         /* --- Reduced Motion --- */
