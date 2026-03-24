@@ -9,6 +9,12 @@
     <meta property="og:description" content="Lussuoso agriturismo nelle colline marchigiane con camere eleganti, cucina tradizionale e ospitalità genuina.">
     <meta property="og:image" content="img/og-image.jpg">
     <meta property="og:url" content="https://www.ilcasaledellacquabona.it">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Casale dell'Acquabona - Agriturismo di Charme nelle Marche">
+    <meta name="twitter:description" content="Lussuoso agriturismo nelle colline marchigiane con camere eleganti, cucina tradizionale e ospitalità genuina.">
+    <link rel="canonical" href="https://www.ilcasaledellacquabona.it">
     <meta name="google-site-verification" content="">
     <title>Casale dell'Acquabona | Agriturismo di Charme nelle Marche</title>
 
@@ -32,7 +38,7 @@
             --light: #f7f5f0;
             --white: #ffffff;
             --text: #3a4a3a;
-            --text-light: #6b7b6b;
+            --text-light: #566656;
             --shadow: 0 8px 32px rgba(42, 74, 62, 0.15);
             --shadow-lg: 0 20px 60px rgba(42, 74, 62, 0.2);
             /* Spacing scale */
@@ -1735,6 +1741,19 @@
                 font-size: 0.85rem;
             }
         }
+        /* --- Reduced Motion --- */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal-element { opacity: 1; transform: none; }
+            html { scroll-behavior: auto; }
+        }
+
     </style>
 </head>
 <body>
@@ -1762,6 +1781,8 @@
             </div>
         </div>
     </header>
+
+    <main id="main-content">
 
     <!-- HERO SECTION -->
     <section class="hero" id="home" role="banner" aria-label="Hero">
@@ -1800,7 +1821,7 @@
     <section class="chi-siamo" id="chi-siamo">
         <div class="container">
             <div>
-                <img src="img/casale-esterno.jpg" alt="Il Casale dell'Acquabona" class="chi-siamo-image" loading="lazy">
+                <img src="img/casale-esterno.jpg" alt="Il Casale dell'Acquabona" class="chi-siamo-image" loading="lazy" width="737" height="768">
             </div>
             <div>
                 <span class="section-label" data-i18n="label-about">Ospitalità</span>
@@ -1827,7 +1848,7 @@
             <div class="camere-grid">
                 <!-- Camera Matrimoniale -->
                 <div class="camera-card">
-                    <img src="img/camera-affresco.jpg" alt="Camera Matrimoniale" class="camera-image" loading="lazy">
+                    <img src="img/camera-affresco.jpg" alt="Camera Matrimoniale" class="camera-image" loading="lazy" width="720" height="470">
                     <div class="camera-info">
                         <h3 data-i18n="room-1-title">Camera Matrimoniale</h3>
                         <div class="camera-price" data-i18n="room-1-price">da €90/notte</div>
@@ -1843,7 +1864,7 @@
 
                 <!-- Camera Superior -->
                 <div class="camera-card">
-                    <img src="img/camera-fiori.jpg" alt="Camera Superior" class="camera-image" loading="lazy">
+                    <img src="img/camera-fiori.jpg" alt="Camera Superior" class="camera-image" loading="lazy" width="720" height="470">
                     <div class="camera-info">
                         <h3 data-i18n="room-2-title">Camera Superior</h3>
                         <div class="camera-price" data-i18n="room-2-price">da €110/notte</div>
@@ -1859,7 +1880,7 @@
 
                 <!-- Camera Familiare -->
                 <div class="camera-card">
-                    <img src="img/camera-familiare.jpg" alt="Camera Familiare" class="camera-image" loading="lazy">
+                    <img src="img/camera-familiare.jpg" alt="Camera Familiare" class="camera-image" loading="lazy" width="1184" height="864">
                     <div class="camera-info">
                         <h3 data-i18n="room-3-title">Camera Familiare</h3>
                         <div class="camera-price" data-i18n="room-3-price">da €130/notte</div>
@@ -1942,9 +1963,9 @@
     <section class="ristorante" id="ristorante">
         <div class="container">
             <div class="ristorante-photos">
-                <img src="img/ristorante-sala.jpg" alt="Sala Ristorante" class="photo-large" loading="lazy">
-                <img src="img/pasta-fatta-casa.jpg" alt="Pasta Fatta in Casa" loading="lazy">
-                <img src="img/tagliere-salumi.jpg" alt="Tagliere Salumi e Formaggi" loading="lazy">
+                <img src="img/ristorante-sala.jpg" alt="Sala Ristorante" class="photo-large" loading="lazy" width="576" height="768">
+                <img src="img/pasta-fatta-casa.jpg" alt="Pasta Fatta in Casa" loading="lazy" width="576" height="768">
+                <img src="img/tagliere-salumi.jpg" alt="Tagliere Salumi e Formaggi" loading="lazy" width="582" height="768">
             </div>
             <div>
                 <span class="section-label" data-i18n="label-restaurant">Cucina</span>
@@ -2092,139 +2113,139 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox(0)">
-                    <img src="img/casale-esterno.jpg" alt="Casale Esterno" loading="lazy">
+                    <img src="img/casale-esterno.jpg" alt="Casale Esterno" loading="lazy" width="737" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="img/vista-colline.jpg" alt="Vista Colline" loading="lazy">
+                    <img src="img/vista-colline.jpg" alt="Vista Colline" loading="lazy" width="585" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="img/camera-affresco.jpg" alt="Camera Matrimoniale" loading="lazy">
+                    <img src="img/camera-affresco.jpg" alt="Camera Matrimoniale" loading="lazy" width="720" height="470">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="img/camera-fiori.jpg" alt="Camera Superior" loading="lazy">
+                    <img src="img/camera-fiori.jpg" alt="Camera Superior" loading="lazy" width="720" height="470">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(4)">
-                    <img src="img/camera-familiare.jpg" alt="Camera Familiare" loading="lazy">
+                    <img src="img/camera-familiare.jpg" alt="Camera Familiare" loading="lazy" width="1184" height="864">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(5)">
-                    <img src="img/interni-scala.jpg" alt="Interni Scala" loading="lazy">
+                    <img src="img/interni-scala.jpg" alt="Interni Scala" loading="lazy" width="576" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(6)">
-                    <img src="img/bagno2.jpg" alt="Bagno" loading="lazy">
+                    <img src="img/bagno2.jpg" alt="Bagno" loading="lazy" width="768" height="1024">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(7)">
-                    <img src="img/terrazza-tramonto.jpg" alt="Terrazza al Tramonto" loading="lazy">
+                    <img src="img/terrazza-tramonto.jpg" alt="Terrazza al Tramonto" loading="lazy" width="589" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(8)">
-                    <img src="img/ristorante-sala.jpg" alt="Sala Ristorante" loading="lazy">
+                    <img src="img/ristorante-sala.jpg" alt="Sala Ristorante" loading="lazy" width="576" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(9)">
-                    <img src="img/pasta-fatta-casa.jpg" alt="Pasta Fatta in Casa" loading="lazy">
+                    <img src="img/pasta-fatta-casa.jpg" alt="Pasta Fatta in Casa" loading="lazy" width="576" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(10)">
-                    <img src="img/tagliere-salumi.jpg" alt="Tagliere Salumi" loading="lazy">
+                    <img src="img/tagliere-salumi.jpg" alt="Tagliere Salumi" loading="lazy" width="582" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(11)">
-                    <img src="img/giardino-rose.jpg" alt="Giardino con Rose" loading="lazy">
+                    <img src="img/giardino-rose.jpg" alt="Giardino con Rose" loading="lazy" width="576" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(12)">
-                    <img src="img/area-esterna.jpg" alt="Area Esterna" loading="lazy">
+                    <img src="img/area-esterna.jpg" alt="Area Esterna" loading="lazy" width="576" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(13)">
-                    <img src="img/esterno-tramonto.jpg" alt="Esterno al Tramonto" loading="lazy">
+                    <img src="img/esterno-tramonto.jpg" alt="Esterno al Tramonto" loading="lazy" width="581" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(14)">
-                    <img src="img/giochi-bambini.jpg" alt="Area Giochi Bambini" loading="lazy">
+                    <img src="img/giochi-bambini.jpg" alt="Area Giochi Bambini" loading="lazy" width="576" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(15)">
-                    <img src="img/drone-frontale2.png" alt="Vista Aerea Drone Frontale" loading="lazy">
+                    <img src="img/drone-frontale2.jpg" alt="Vista Aerea Drone Frontale" loading="lazy" width="1365" height="768">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(16)">
-                    <img src="img/drone-colline.jpg" alt="Vista Drone Colline" loading="lazy">
+                    <img src="img/drone-colline.jpg" alt="Vista Drone Colline" loading="lazy" width="1200" height="675">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(17)">
-                    <img src="img/drone-panorama.jpg" alt="Panorama Drone" loading="lazy">
+                    <img src="img/drone-panorama.jpg" alt="Panorama Drone" loading="lazy" width="1200" height="675">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(18)">
-                    <img src="img/drone-tenuta.jpg" alt="Vista Tenuta Drone" loading="lazy">
+                    <img src="img/drone-tenuta.jpg" alt="Vista Tenuta Drone" loading="lazy" width="1200" height="675">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(19)">
-                    <img src="img/drone-vigna.jpg" alt="Vista Vigna Drone" loading="lazy">
+                    <img src="img/drone-vigna.jpg" alt="Vista Vigna Drone" loading="lazy" width="1200" height="675">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(20)">
-                    <img src="img/insegna-ingresso.jpg" alt="Insegna Agriturismo" loading="lazy">
+                    <img src="img/insegna-ingresso.jpg" alt="Insegna Agriturismo" loading="lazy" width="720" height="470">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(21)">
-                    <img src="img/camera-affresco.jpg" alt="Camera con Affresco" loading="lazy">
+                    <img src="img/camera-affresco.jpg" alt="Camera con Affresco" loading="lazy" width="720" height="470">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(22)">
-                    <img src="img/camera-fiori.jpg" alt="Camera Fiorita" loading="lazy">
+                    <img src="img/camera-fiori.jpg" alt="Camera Fiorita" loading="lazy" width="720" height="470">
                     <div class="gallery-overlay">
                         <div class="gallery-overlay-icon">🔍</div>
                     </div>
@@ -2355,6 +2376,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- FOOTER -->
     <footer>
@@ -2877,7 +2900,7 @@
             'img/area-esterna.jpg',
             'img/esterno-tramonto.jpg',
             'img/giochi-bambini.jpg',
-            'img/drone-frontale2.png',
+            'img/drone-frontale2.jpg',
             'img/drone-colline.jpg',
             'img/drone-panorama.jpg',
             'img/drone-tenuta.jpg',
