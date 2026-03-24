@@ -884,6 +884,43 @@
             transition: all 0.4s ease;
         }
 
+        .gallery-grid:not(.expanded) .gallery-item:nth-child(n+13) {
+            display: none;
+        }
+
+        .gallery-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 48px auto 0;
+            padding: 14px 36px;
+            background: transparent;
+            color: var(--accent);
+            border: 1.5px solid var(--accent);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all var(--duration-normal) ease;
+        }
+
+        .gallery-toggle:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .gallery-toggle svg {
+            transition: transform var(--duration-normal) ease;
+        }
+
+        .gallery-grid.expanded + .gallery-toggle svg {
+            transform: rotate(180deg);
+        }
+
         .gallery-item:hover {
             transform: scale(1.05);
             box-shadow: var(--shadow-lg);
@@ -1247,6 +1284,43 @@
         .modal h2 {
             color: var(--primary);
             margin-bottom: 30px;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .form-success-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+            animation: successPop 0.4s var(--ease-out-back);
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .form-success h3 {
+            color: var(--primary);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
         .form-group {
@@ -2326,6 +2400,10 @@
                     </div>
                 </div>
             </div>
+            <button class="gallery-toggle" onclick="toggleGallery()" data-i18n-show="gallery-show" data-i18n-hide="gallery-hide">
+                <span>Scopri tutta la galleria</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
         </div>
     </section>
 
@@ -2506,9 +2584,10 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeBookingModal()">×</button>
             <h2 data-i18n="booking-title">Prenota il Tuo Soggiorno</h2>
-            <form action="https://formsubmit.co/marcocapodacqua@hotmail.it" method="POST">
+            <form id="bookingForm" action="https://formsubmit.co/marcocapodacqua@hotmail.it" method="POST">
                 <input type="hidden" name="_subject" value="Nuova Prenotazione da Casale dell'Acquabona">
                 <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://salvomag-hub.github.io/casalesandbox/">
 
                 <div class="form-row">
                     <div class="form-group">
@@ -2565,9 +2644,15 @@
                     <textarea name="message" placeholder="Richieste particolari, allergie, etc."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="btn-send">Invia Prenotazione</button>
+                <button type="submit" class="btn btn-primary" id="bookingSubmitBtn" style="width: 100%;" data-i18n="btn-send">Invia Prenotazione</button>
                 <p style="font-size: 0.85rem; color: var(--text-light); text-align: center; margin-top: 15px;" data-i18n="form-note">Riceverai una conferma via email entro 24 ore</p>
             </form>
+            <div class="form-success" id="bookingSuccess" style="display: none;">
+                <div class="form-success-icon">✓</div>
+                <h3 data-i18n="form-success-title">Richiesta Inviata!</h3>
+                <p data-i18n="form-success-text">Grazie per aver scelto Casale dell'Acquabona. Vi contatteremo entro 24 ore per confermare la prenotazione.</p>
+                <button class="btn btn-secondary" onclick="closeBookingModal()" style="margin-top: 20px;" data-i18n="form-success-close">Chiudi</button>
+            </div>
         </div>
     </div>
 
@@ -3029,6 +3114,11 @@
         function openBookingModal() {
             document.getElementById('bookingModal').classList.add('active');
             document.body.style.overflow = 'hidden';
+            // Reset form state when reopening
+            document.getElementById('bookingForm').style.display = '';
+            document.getElementById('bookingForm').reset();
+            document.getElementById('bookingSuccess').style.display = 'none';
+            document.getElementById('bookingSubmitBtn').disabled = false;
         }
 
         function closeBookingModal() {
@@ -3041,6 +3131,48 @@
             const element = document.getElementById(section);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Form AJAX submit with inline feedback
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const btn = document.getElementById('bookingSubmitBtn');
+            const originalText = btn.textContent;
+            btn.textContent = '...';
+            btn.disabled = true;
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(function(response) {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('bookingSuccess').style.display = 'block';
+                } else {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    alert('Si è verificato un errore. Riprova.');
+                }
+            }).catch(function() {
+                btn.textContent = originalText;
+                btn.disabled = false;
+                alert('Errore di connessione. Riprova.');
+            });
+        });
+
+        function toggleGallery() {
+            const grid = document.querySelector('.gallery-grid');
+            const btn = document.querySelector('.gallery-toggle');
+            const isExpanded = grid.classList.toggle('expanded');
+            const lang = document.documentElement.lang || 'it';
+            if (isExpanded) {
+                btn.querySelector('span').textContent = lang === 'en' ? 'Show less' : 'Mostra meno';
+            } else {
+                btn.querySelector('span').textContent = lang === 'en' ? 'Discover full gallery' : 'Scopri tutta la galleria';
+                grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
