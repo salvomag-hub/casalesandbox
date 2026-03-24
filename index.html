@@ -278,8 +278,29 @@
             left: 0;
             width: 100vw;
             height: 100svh;
-            background: linear-gradient(rgba(26, 46, 37, 0.35), rgba(26, 46, 37, 0.45)), url('img/principale-clean.jpg') center/cover no-repeat;
+            background: none;
             z-index: -2;
+            display: none;
+        }
+
+        .hero-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100svh;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100svh;
+            background: linear-gradient(rgba(26, 46, 37, 0.4), rgba(26, 46, 37, 0.55));
+            z-index: -1;
         }
 
         .hero::before {
@@ -453,6 +474,47 @@
 
         .chi-siamo-highlight p {
             margin: 0;
+        }
+
+        /* PANORAMA CASALE */
+        .panorama-casale {
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            clip-path: inset(0);
+        }
+
+        .panorama-casale::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100svh;
+            background: linear-gradient(rgba(26, 46, 37, 0.25), rgba(26, 46, 37, 0.4)), url('img/principale-clean.jpg') center/cover no-repeat;
+            z-index: -2;
+        }
+
+        .panorama-casale-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 0 20px;
+        }
+
+        .panorama-casale-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* CAMERE SECTION */
@@ -1784,6 +1846,12 @@
 
     <main id="main-content">
 
+    <!-- HERO VIDEO -->
+    <video class="hero-video" autoplay muted loop playsinline poster="img/principale-clean.jpg">
+        <source src="video/hero-drone.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay" aria-hidden="true"></div>
+
     <!-- HERO SECTION -->
     <section class="hero" id="home" role="banner" aria-label="Hero">
         <div class="hero-content">
@@ -1837,6 +1905,13 @@
         </div>
     </section>
 
+    <!-- PANORAMA CASALE -->
+    <section class="panorama-casale">
+        <div class="panorama-casale-content">
+            <p class="panorama-casale-quote" data-i18n="panorama-quote">Dove le colline marchigiane incontrano il cielo</p>
+        </div>
+    </section>
+
     <!-- CAMERE SECTION -->
     <section class="camere" id="camere">
         <div class="container">
@@ -1851,7 +1926,7 @@
                     <img src="img/camera-affresco.jpg" alt="Camera Matrimoniale" class="camera-image" loading="lazy" width="720" height="470">
                     <div class="camera-info">
                         <h3 data-i18n="room-1-title">Camera Matrimoniale</h3>
-                        <div class="camera-price" data-i18n="room-1-price">da €90/notte</div>
+                        <div class="camera-price" data-i18n="room-1-price">da XXXX €/notte</div>
                         <ul class="camera-features">
                             <li data-i18n="room-1-f1">Letto Ferro Battuto</li>
                             <li data-i18n="room-1-f2">Travi a Vista</li>
@@ -1867,7 +1942,7 @@
                     <img src="img/camera-fiori.jpg" alt="Camera Superior" class="camera-image" loading="lazy" width="720" height="470">
                     <div class="camera-info">
                         <h3 data-i18n="room-2-title">Camera Superior</h3>
-                        <div class="camera-price" data-i18n="room-2-price">da €110/notte</div>
+                        <div class="camera-price" data-i18n="room-2-price">da XXXX €/notte</div>
                         <ul class="camera-features">
                             <li data-i18n="room-2-f1">Lucernario Panoramico</li>
                             <li data-i18n="room-2-f2">Vista Colline</li>
@@ -1883,7 +1958,7 @@
                     <img src="img/camera-familiare.jpg" alt="Camera Familiare" class="camera-image" loading="lazy" width="1184" height="864">
                     <div class="camera-info">
                         <h3 data-i18n="room-3-title">Camera Familiare</h3>
-                        <div class="camera-price" data-i18n="room-3-price">da €130/notte</div>
+                        <div class="camera-price" data-i18n="room-3-price">da XXXX €/notte</div>
                         <ul class="camera-features">
                             <li data-i18n="room-3-f1">Spaziosa e Confortevole</li>
                             <li data-i18n="room-3-f2">Letto Extra</li>
@@ -1917,7 +1992,7 @@
                 <!-- Weekend Romantico -->
                 <div class="experience-card">
                     <h3>💑 <span data-i18n="exp-1-title">Weekend Romantico</span></h3>
-                    <div class="experience-price">€290/coppia</div>
+                    <div class="experience-price">XXXX €/coppia</div>
                     <ul>
                         <li data-i18n="exp-1-i1">2 notti in camera elegante</li>
                         <li data-i18n="exp-1-i2">Colazione contadina inclusa</li>
@@ -1931,7 +2006,7 @@
                 <!-- Settimana Relax -->
                 <div class="experience-card">
                     <h3>🌿 <span data-i18n="exp-2-title">Settimana Relax</span></h3>
-                    <div class="experience-price">€750/coppia</div>
+                    <div class="experience-price">XXXX €/coppia</div>
                     <ul>
                         <li data-i18n="exp-2-i1">7 notti in camera confortevole</li>
                         <li data-i18n="exp-2-i2">Colazione bio inclusa ogni giorno</li>
@@ -1945,7 +2020,7 @@
                 <!-- Esperienza Natura -->
                 <div class="experience-card">
                     <h3>⛰️ <span data-i18n="exp-3-title">Esperienza Natura</span></h3>
-                    <div class="experience-price">€480/coppia</div>
+                    <div class="experience-price">XXXX €/coppia</div>
                     <ul>
                         <li data-i18n="exp-3-i1">3 notti con colazione</li>
                         <li data-i18n="exp-3-i2">Trekking Monti Sibillini guidato</li>
@@ -2479,9 +2554,9 @@
                     <label data-i18n="form-room">Tipo Camera</label>
                     <select name="room" required>
                         <option value="">Seleziona una camera</option>
-                        <option value="Camera Matrimoniale (€90/notte)">Camera Matrimoniale (€90/notte)</option>
-                        <option value="Camera Superior (€110/notte)">Camera Superior (€110/notte)</option>
-                        <option value="Camera Familiare (€130/notte)">Camera Familiare (€130/notte)</option>
+                        <option value="Camera Matrimoniale (XXXX €/notte)">Camera Matrimoniale (XXXX €/notte)</option>
+                        <option value="Camera Superior (XXXX €/notte)">Camera Superior (XXXX €/notte)</option>
+                        <option value="Camera Familiare (XXXX €/notte)">Camera Familiare (XXXX €/notte)</option>
                     </select>
                 </div>
 
@@ -2530,7 +2605,7 @@
         "telephone": "+39 338 657 5725",
         "email": "info@ilcasaledellacquabona.it",
         "url": "https://www.ilcasaledellacquabona.it",
-        "priceRange": "€90-€130",
+        "priceRange": "XXXX €",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "8.8",
@@ -2590,19 +2665,19 @@
                 "rooms-title": "Le Nostre Camere",
                 "rooms-subtitle": "Ogni camera è un'oasi di comfort e eleganza",
                 "room-1-title": "Camera Matrimoniale",
-                "room-1-price": "da €90/notte",
+                "room-1-price": "da XXXX €/notte",
                 "room-1-f1": "Letto Ferro Battuto",
                 "room-1-f2": "Travi a Vista",
                 "room-1-f3": "Climatizzata",
                 "room-1-f4": "Bagno Privato",
                 "room-2-title": "Camera Superior",
-                "room-2-price": "da €110/notte",
+                "room-2-price": "da XXXX €/notte",
                 "room-2-f1": "Lucernario Panoramico",
                 "room-2-f2": "Vista Colline",
                 "room-2-f3": "Climatizzata",
                 "room-2-f4": "Bagno Privato",
                 "room-3-title": "Camera Familiare",
-                "room-3-price": "da €130/notte",
+                "room-3-price": "da XXXX €/notte",
                 "room-3-f1": "Spaziosa e Confortevole",
                 "room-3-f2": "Letto Extra",
                 "room-3-f3": "Climatizzata",
@@ -2749,19 +2824,19 @@
                 "rooms-title": "Our Rooms",
                 "rooms-subtitle": "Each room is an oasis of comfort and elegance",
                 "room-1-title": "Double Room",
-                "room-1-price": "from €90/night",
+                "room-1-price": "from XXXX €/night",
                 "room-1-f1": "Wrought Iron Bed",
                 "room-1-f2": "Exposed Beams",
                 "room-1-f3": "Air Conditioning",
                 "room-1-f4": "Private Bathroom",
                 "room-2-title": "Superior Room",
-                "room-2-price": "from €110/night",
+                "room-2-price": "from XXXX €/night",
                 "room-2-f1": "Panoramic Skylight",
                 "room-2-f2": "Hill Views",
                 "room-2-f3": "Air Conditioning",
                 "room-2-f4": "Private Bathroom",
                 "room-3-title": "Family Room",
-                "room-3-price": "from €130/night",
+                "room-3-price": "from XXXX €/night",
                 "room-3-f1": "Spacious & Comfortable",
                 "room-3-f2": "Extra Bed",
                 "room-3-f3": "Air Conditioning",
